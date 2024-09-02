@@ -1,0 +1,77 @@
+{embed="includes/head" page-title="About"}
+
+	{embed="includes/header"}
+
+	<div id="content">
+
+		<div class="wrap">
+
+			<div id="main" role="main">
+				
+				{exp:channel:entries channel="pages"}
+				
+					{page-content}
+				
+				{/exp:channel:entries}
+
+			</div>
+	
+			<div id="secondary">
+	
+				<div id="featured-directors">
+	
+					<h3>Featured Directors</h3>
+	
+					<ul>
+	
+						<li>
+
+							<a href="/about/director/">
+						
+								<img src="/m/directors/example.jpg" alt="Marco Baca" />
+						
+								<h3>Marco Baca</h3>
+							
+							</a>
+							
+						</li>
+					
+						<li>
+						
+							<a href="/about/director/">
+						
+								<img src="/m/directors/example.jpg" alt="Laurence Shanet" />
+						
+								<h3>Laurence Shanet</h3>
+							
+							</a>
+							
+						</li>
+
+						<li>
+						
+							<a href="/about/director/">
+						
+								<img src="/m/directors/example.jpg" alt="Joel Umbaugh" />
+						
+								<h3>Joel Umbaugh</h3>
+							
+							</a>
+							
+						</li>
+	
+					</ul>
+	
+					<p><em>Click on director photo for more info.</em></p>
+	
+				</div>
+	
+			</div>
+
+		</div>
+
+	</div>
+
+	{embed="includes/scenes"}
+
+	{embed="includes/footer"}

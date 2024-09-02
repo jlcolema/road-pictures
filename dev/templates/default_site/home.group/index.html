@@ -1,0 +1,99 @@
+{embed="includes/head"}
+
+	{embed="includes/header"}
+
+	<div id="content">
+
+		<div class="wrap">
+
+			<div id="main" role="main">
+
+				<div id="video">
+
+					<video id="player" width="761" height="430" autoplay>
+
+						<source src="/a/video/new-york.mov" />
+
+						<source src="path/to/your/movie.ogv" />
+
+					</video>
+
+				</div>
+				
+			</div>
+	
+			<div id="secondary">
+
+				<div id="aside">
+	
+					<h2>Driven</h2>
+
+					<p>We are driven to create terrific film and video for television, web, DVD, for any screen at all. We work with directors and <abbr title="Full text of DP.">DP</abbr>&rsquo;s from across North America, bringing together the right team for every project.</p>
+
+				</div>
+	
+				{embed="includes/featured-directors"}
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<div id="videos">
+	
+		<div class="wrap">
+	
+			<div class="category recent-work">
+			
+				<h3 class="category-title">Recent Work</h3>
+	
+				<div class="thumbnails">
+	
+					<ul class="slides">
+
+						{exp:channel:entries channel="work" category="1" dynamic="no"}
+					
+						<li>
+						
+							<a href="{title_permalink="work/video"}">
+	
+								{if work-thumbnail}
+	
+								<img src="{work-thumbnail}" alt="{title}" />
+	
+								{if:else}
+	
+								<img src="/a/img/video-thumbnail.jpg" alt="Thumbnail coming soon." />
+	
+								{/if}
+	
+								<div class="overlay">
+	
+									{work-client}
+	
+									<h4 class="client">{work-client:title}</h4>
+	
+									{/work-client}
+	
+									<h5 class="title">{title}</h5>
+	
+								</div>
+	
+							</a>
+	
+						</li>
+	
+						{/exp:channel:entries}
+	
+					</ul>
+	
+				</div>
+			
+			</div>
+	
+		</div>
+	
+	</div>
+
+	{embed="includes/footer"}

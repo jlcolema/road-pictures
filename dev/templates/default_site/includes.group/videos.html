@@ -1,0 +1,295 @@
+<div id="videos">
+
+	<div class="wrap">
+
+		<div class="category off-road-work">
+		
+			<h3 class="category-title">Off-Road Work</h3>
+
+			<div class="thumbnails">
+
+				<ul class="slides">
+
+					{exp:channel:entries channel="work" category="6" dynamic="no"}
+				
+					<li {if segment_3 == ""}class="current"{/if}>
+					
+						<a href="{title_permalink="work/video"}">
+
+							{if work-thumbnail}
+
+							<img src="{work-thumbnail}" alt="{title}" />
+
+							{if:else}
+
+							<img src="/a/img/video-thumbnail.jpg" alt="Thumbnail coming soon." />
+
+							{/if}
+
+							<div class="overlay">
+
+								{work-client}
+
+								<h4 class="client">{work-client:title}</h4>
+
+								{/work-client}
+
+								<h5 class="title">{title}</h5>
+
+							</div>
+
+						</a>
+
+					</li>
+
+					{/exp:channel:entries}
+
+				</ul>
+
+			</div>
+		
+		</div>
+
+		<div class="category recent-work">
+		
+			<h3 class="category-title">Recent Work</h3>
+
+			<div class="thumbnails">
+
+				<ul class="slides">
+
+					{exp:channel:entries channel="work" category="1" dynamic="no"}
+				
+					<li>
+					
+						<a href="{title_permalink="work/video"}">
+
+							{if work-thumbnail}
+
+							<img src="{work-thumbnail}" alt="{title}" />
+
+							{if:else}
+
+							<img src="/a/img/video-thumbnail.jpg" alt="Thumbnail coming soon." />
+
+							{/if}
+
+							<div class="overlay">
+
+								{work-client}
+
+								<h4 class="client">{work-client:title}</h4>
+
+								{/work-client}
+
+								<h5 class="title">{title}</h5>
+
+							</div>
+
+						</a>
+
+					</li>
+
+					{/exp:channel:entries}
+
+				</ul>
+
+			</div>
+		
+		</div>
+
+		<div class="category lifestyle">
+		
+			<h3 class="category-title">Lifestyle</h3>
+
+			<div class="thumbnails">
+
+				<ul class="slides">
+				
+					{exp:channel:entries channel="work" category="2" dynamic="no"}
+				
+					<li>
+					
+						<a href="{title_permalink="work/video"}">
+
+							{if work-thumbnail}
+
+							<img src="{work-thumbnail}" alt="{title}" />
+
+							{if:else}
+
+							<img src="/a/img/video-thumbnail.jpg" alt="Thumbnail coming soon." />
+
+							{/if}
+
+							<div class="overlay">
+
+								{work-client}
+
+								<h4 class="client">{work-client:title}</h4>
+
+								{/work-client}
+
+								<h5 class="title">{title}</h5>
+
+							</div>
+
+						</a>
+
+					</li>
+
+					{/exp:channel:entries}
+
+				</ul>
+
+			</div>
+		
+		</div>
+
+		<div class="category healthcare">
+		
+			<h3 class="category-title">Healthcare</h3>
+
+			<div class="thumbnails">
+
+				<ul class="slides">
+				
+					{exp:channel:entries channel="work" category="3" dynamic="no"}
+				
+					<li>
+					
+						<a href="{title_permalink="work/video"}">
+
+							{if work-thumbnail}
+
+							<img src="{work-thumbnail}" alt="{title}" />
+
+							{if:else}
+
+							<img src="/a/img/video-thumbnail.jpg" alt="Thumbnail coming soon." />
+
+							{/if}
+
+							<div class="overlay">
+
+								{work-client}
+
+								<h4 class="client">{work-client:title}</h4>
+
+								{/work-client}
+
+								<h5 class="title">{title}</h5>
+
+							</div>
+
+						</a>
+
+					</li>
+
+					{/exp:channel:entries}
+
+				</ul>
+
+			</div>
+		
+		</div>
+
+		<div class="category humor">
+		
+			<h3 class="category-title">Humor</h3>
+
+			<div class="thumbnails">
+
+				<ul class="slides">
+				
+					{exp:channel:entries channel="work" category="4" dynamic="no"}
+				
+					<li>
+					
+						<a href="{title_permalink="work/video"}">
+
+							{if work-thumbnail}
+
+							<img src="{work-thumbnail}" alt="{title}" />
+
+							{if:else}
+
+							<img src="/a/img/video-thumbnail.jpg" alt="Thumbnail coming soon." />
+
+							{/if}
+
+							<div class="overlay">
+
+								{work-client}
+
+								<h4 class="client">{work-client:title}</h4>
+
+								{/work-client}
+
+								<h5 class="title">{title}</h5>
+
+							</div>
+
+						</a>
+
+					</li>
+
+					{/exp:channel:entries}
+
+				</ul>
+
+			</div>
+		
+		</div>
+
+		<div class="category long-form">
+		
+			<h3 class="category-title">Long Form</h3>
+
+			<div class="thumbnails">
+
+				<ul class="slides">
+				
+					{exp:channel:entries channel="work" category="5" dynamic="no"}
+				
+					<li>
+					
+						<a href="{title_permalink="work/video"}">
+
+							{if work-thumbnail}
+
+							<img src="{work-thumbnail}" alt="{title}" />
+
+							{if:else}
+
+							<img src="/a/img/video-thumbnail.jpg" alt="Thumbnail coming soon." />
+
+							{/if}
+
+							<div class="overlay">
+
+								{work-client}
+
+								<h4 class="client">{work-client:title}</h4>
+
+								{/work-client}
+
+								<h5 class="title">{title}</h5>
+
+							</div>
+
+						</a>
+
+					</li>
+
+					{/exp:channel:entries}
+
+				</ul>
+
+			</div>
+		
+		</div>
+
+	</div>
+
+</div>

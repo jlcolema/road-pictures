@@ -1,0 +1,45 @@
+{embed="includes/head" page-title="Blog"}
+
+	{embed="includes/header"}
+
+	<div id="content">
+
+		<div class="wrap">
+
+			<div id="main" role="main">
+				
+				{exp:channel:entries channel="blog" limit="5" paginate="bottom"}
+
+				<article>
+					
+					<h1><a href="{title_permalink="blog/article"}">{title}</a></h1>
+
+					<div class="published-on">
+
+						<p><span class="date">{entry_date format="%F %d, %Y"}</span></p>
+
+					</div>
+
+					<p>{blog-excerpt}</p>
+
+				</article>
+
+				{/exp:channel:entries}
+
+			</div>
+	
+			<div id="secondary">
+
+				{embed="includes/recent-posts"}
+
+				{embed="includes/archives"}
+
+				{embed="includes/categories"}
+
+			</div>
+
+		</div>
+
+	</div>
+
+	{embed="includes/footer"}

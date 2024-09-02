@@ -1,0 +1,15 @@
+<div class="widget archives">
+
+	<h2>Archives</h2>
+
+	<ul>
+
+		{exp:channel:month_links channel="blog" limit="12"}
+
+		<li><a href="{path="blog/archive"}">{month} {year}</a></li>
+
+		{/exp:channel:month_links}
+
+	</ul>
+
+</div>

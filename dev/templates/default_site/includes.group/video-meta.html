@@ -1,0 +1,28 @@
+<div id="video-meta">
+
+	<dl>
+
+		{exp:channel:entries channel="work" limit="1"}
+
+		{work-client}
+
+		<dt>Client</dt>
+		<dd>{work-client:title}</dd>
+
+		{/work-client}
+
+		<dt>Title</dt>
+		<dd>{title}</dd>
+
+		{work-director}
+			
+		<dt>Director</dt>						
+		<dd>{work-director:title}</dd>
+
+		{/work-director}
+
+		{/exp:channel:entries}
+
+	</dl>
+
+</div>

@@ -1,0 +1,412 @@
+
+//-------------------------------------------
+//	Colors
+//-------------------------------------------
+
+
+// Grayscale
+
+$black: rgb(0, 0, 0);
+$white: rgb(255, 255, 255);
+
+
+//-------------------------------------------
+//	Sizes
+//-------------------------------------------
+
+
+// $base: 12px;
+// $base-sm: $base/2;
+// $base-med: $base * 2;
+// $base-lg: $base * 3;
+// $base-xl: $base * 4;
+
+// $base-font-size: 14px;
+// $base-font-rem: 1.4rem;
+// $base-line-height: $base-med;
+
+
+//-------------------------------------------
+//	Fonts
+//-------------------------------------------
+
+
+// Proxima Nova (https://typekit.com/fonts/nimbus-sans)
+
+// Note: the first portion (that displays "-n3," "-i3," etc., helps Internet Explorer in cases where font-weight choices are very close (i.e. 300 vs. 400). Basically, it says "Internet Explorer, I reaaaaally want to use this particular one."
+
+// Regular
+
+// "proxima-nova-n4", "proxima-nova" / font-weight: 400 / font-style: normal
+
+@mixin proxima-nova {
+
+	font-family: "proxima-nova-n4", "proxima-nova", Arial, Helvetica, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	
+}
+
+// Regular Italic
+
+// "proxima-nova-i4", "proxima-nova" / font-weight: 400 / font-style: italic
+
+@mixin proxima-nova-italic {
+
+	font-family: "proxima-nova-i4", "proxima-nova", Arial, Helvetica, sans-serif;
+	font-weight: 400;
+	font-style: italic;
+	
+}
+
+
+// Bold
+
+// "proxima-nova-n7", "proxima-nova" / font-weight: 700 / font-style: normal
+
+@mixin proxima-nova-bold {
+
+	font-family: "proxima-nova-n7", "proxima-nova", Arial, Helvetica, sans-serif;
+	font-weight: 700;
+	font-style: normal;
+	
+}
+
+
+// Bold Italic
+
+// "proxima-nova-i7", "proxima-nova" / font-weight: 700 / font-style: italic
+
+@mixin proxima-nova-bold-italic {
+
+	font-family: "proxima-nova-i7", "proxima-nova", Arial, Helvetica, sans-serif;
+	font-weight: 700;
+	font-style: italic;
+	
+}
+
+
+// $headline-text: Arial, Helvetica, sans-serif;
+// $body-text: Arial, Helvetica, sans-serif;
+
+
+//-------------------------------------------
+//	Grid
+//-------------------------------------------
+
+
+// $grid-col: 55px;
+// $grid-gutter: 43px;
+// $grid-num: 12;
+// $max-page-width: ($grid-col * $grid-num) + ($grid-gutter * ($grid-num - 1));
+
+// @mixin percent($col-num: 6, $gutter-num: 4, $context: $max-page-width) {
+
+	// width: percentage((($grid-col * $col-num)+($grid-gutter * $gutter-num))/$context);
+
+// }
+
+// $maxContentWidth: $max-page-width + $grid-gutter;
+
+@mixin wrap {
+	width: 990px;
+	margin: 0 auto;
+	// padding: $base $grid-gutter;
+	// max-width: $maxContentWidth;
+	// @include border-box;
+}
+
+// Breakpoints/Queries decided by design
+
+// Use q- format for easy find and replace globally if needed
+
+// $q-320: 320px;
+// $q-400: 400px;
+// $q-600: 600px;
+// $q-1200: 1200px;
+
+
+/*-------------------------------------------
+	General Selectors
+-------------------------------------------*/
+
+
+html {
+	font-size: 62.5%;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+}
+
+body {
+	@include font-size(12);
+	line-height: (16/12) + em;
+	@include proxima-nova;
+	color: $black;
+	background: $black url(/a/img/background.jpg) center top no-repeat;
+}
+
+// General Wrappers (not sure where these should go just yet)
+
+#content {
+	border-top: 1px solid rgb(90, 90, 90);
+	border-bottom: 1px solid rgb(90, 90, 90);
+	}
+
+.wrap {
+
+	@include wrap;
+	@include group;
+
+	#header &,
+	#content & {
+		border-left: 2px solid rgb(90, 90, 90);
+		border-right: 2px solid rgb(90, 90, 90);
+		}
+
+	#content & {
+		position: relative;
+		background: url(/a/img/vertical-rule.png) 223px 0 repeat-y;
+		}
+
+}
+
+/* Block Level */
+
+h1, .alpha {
+	// margin-bottom: (40/85) + em;
+	@include font-size(20);
+	line-height: (23/20) + em;
+	@include proxima-nova-bold;
+	color: rgb(130, 24, 24);
+}
+
+h2, .beta {
+	// @include font-size(24);
+	// line-height: (26/24) + em;
+	@include proxima-nova-bold;
+	// margin-bottom: $base-med;
+	color: rgb(130, 24, 24);
+}
+
+h3, .gamma {
+	// font-size: 24px;
+	@include proxima-nova-bold;
+	// margin-bottom: $base-med;
+	color: rgb(130, 24, 24);
+}
+
+h4, .delta {
+	// font-size: 20px;
+	@include proxima-nova-bold;
+	// text-transform: uppercase;
+	// margin-bottom: $base;
+}
+
+h5, .epsilon {
+	// font-size: 20px;
+	@include proxima-nova-bold;
+	// margin-bottom: $base;
+}
+
+h6, .zeta {
+	// font-size: 18px;
+	@include proxima-nova-bold;
+	// margin-bottom: $base;
+}
+
+p, ul, dl, ol {
+	// font-size: $base-font-size;
+	// line-height: $base-line-height;
+	margin-bottom: (16/12) + em;
+}
+
+li {
+	// margin-bottom: $base;
+	}
+
+ul {
+
+	li {
+		// list-style-type: none;
+	}
+
+}
+
+ol {
+
+	li {
+		// margin-left: $grid-gutter;
+		}
+
+}
+
+dt {
+	@include proxima-nova-bold;
+	color: rgb(130, 24, 24);
+}
+
+dd {}
+
+table {
+	// border-collapse: collapse;
+	// border: 2px solid $black;
+}
+
+th {
+	// text-align: left;
+	// padding: $base $grid-gutter/4;
+}
+
+td {
+	// padding: $base-sm $grid-gutter/4;
+}
+
+caption {
+	// border: 2px solid $black;
+	// border-bottom: none;
+	// padding: $base $grid-gutter/4;
+}
+
+figure {}
+
+figcaption {}
+
+blockquote {
+
+	p {}
+
+	.who {}
+
+}
+
+/* Inline */
+
+i,
+em { @include proxima-nova-italic; }
+
+b,
+strong { @include proxima-nova-bold; }
+
+a {
+
+	color: rgb(130, 24, 24);
+	text-decoration: none;
+
+	// &:link { -webkit-tap-highlight-color: #fcd700; }
+
+	&:hover,
+	&:focus {}
+
+}
+
+img {
+	display: block;
+	// margin-bottom: $base;
+	}
+
+// code { font: 12px/1 "Courier New", Courier, monospace; }
+
+sub, sup {
+	// line-height: 0;
+	}
+
+::-moz-selection {
+	// color: $black;
+	// background: #d88cff;
+	// text-shadow: none;
+}
+
+::selection {
+	// color: $black;
+	// background: #d88cff;
+	// text-shadow: none;
+}
+
+ins {
+	// color: $black;
+	// background-color: #fcd700;
+	// text-decoration: none;
+	}
+
+mark {
+	// color: $black;
+	// background-color: #fcd700;
+	// font-style: italic;
+	// font-weight: bold;
+	}
+
+// Mozilla doesn't style place holders by default
+
+// input:-moz-placeholder { color: #a9a9a9; }
+
+// textarea:-moz-placeholder { color: #a9a9a9; }
+
+
+/*-------------------------------------------
+	Forms
+-------------------------------------------*/
+
+
+form {}
+
+fieldset {}
+
+legend {}
+
+label {}
+
+input {
+
+	-webkit-appearance: none; // Override general styles applied to iOS devices.
+
+	&[type="text"],
+	&[type="search"] {}
+
+	&[type="checkbox"] {}
+
+	&[type="radio"] {}
+
+	&[type="button"],
+	&[type="submit"] {}
+
+}
+
+textarea {
+	-webkit-appearance: none; // Override general styles applied to iOS devices.
+	}
+
+button {
+	-webkit-appearance: none; // Override general styles applied to iOS devices.
+	}
+
+
+/*-------------------------------------------
+	Additional Classes
+-------------------------------------------*/
+
+
+.group { @include group; }
+
+.left {
+	float: left;
+	display: block;
+	margin: 0 15px 15px 0;
+	}
+
+.right {
+	float: right;
+	display: block;
+	margin: 0 0 15px 15px;
+	}
+
+.upper { text-transform: uppercase; }
+
+.line { display: block; }
+
+.move {
+	position: absolute;
+	left: -9999px;
+	}
+
+.hide { display: none; }

@@ -1,0 +1,69 @@
+
+/*-------------------------------------------
+	Main
+-------------------------------------------*/
+
+#main {
+
+	padding: 30px;
+
+	#home &,
+	#contact &,
+	#work & { padding: 0; }
+
+	#about &,
+	#blog & { background: rgb(200, 200, 200); }
+
+}
+
+	#video {
+		width: 100%;
+		height: 430px;
+		}
+
+		.video {}
+
+	article {
+
+		margin-bottom: 12px;	
+		border-bottom: 1px solid rgb(155, 155, 155);
+
+		h1 {
+
+			color: rgb(87, 87, 87);
+			margin-bottom: 12px;
+			
+			a {
+			
+				&:hover { text-decoration: underline; }
+				
+			}
+			
+		}
+
+		&:last-of-type {
+			margin-bottom: 0;
+			border: none;
+			}
+	
+	}
+
+		// Date associated with article
+
+		.published-on {}
+
+		// Tags associated with article
+
+		.tags {
+
+			margin-bottom: 12px;
+
+			p {}
+
+			a {
+			
+				&:hover { text-decoration: underline; }
+				
+			}
+
+		}

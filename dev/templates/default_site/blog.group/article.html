@@ -1,0 +1,141 @@
+{embed="includes/head" page-title="Article"}
+
+	{embed="includes/header"}
+
+	<div id="content">
+
+		<div class="wrap">
+
+			<div id="main" role="main">
+				
+				{exp:channel:entries channel="blog" limit="1"}
+
+				<article>
+					
+					<h1>{title}</h1>
+
+					<div class="published-on">
+
+						<p><span class="date">{entry_date format="%F %d, %Y"}</span></p>
+
+					</div>
+
+					<div class="content">{blog-content}</div>
+
+					<div class="published-in">
+
+						<p>This entry was published in <a href="#">Category goes here</a>.</p>
+
+					</div>
+
+					<div class="tags">
+
+						{exp:tagger:tags entry_id="{entry_id}"}
+
+							{if tagger:no_tags}<p>No tags were found.</p>{/if}
+
+							<a href="/tag/{tagger:urlsafe_tagname}">{tagger:tag_name}</a>
+						
+						{/exp:tagger:tags}
+					
+					</div>
+
+					<div class="permalink">
+
+						<p><a href="{url_title_path="blog/article"}">Permalink</a></p>
+
+					</div>
+
+				</article>
+
+				{/exp:channel:entries}
+
+				<div id="comments">
+
+					<h6>Discussion</h6>
+
+					{exp:comment:entries channel="blog"}
+
+					{if no_results}
+
+					<p>There are no comments on this article.</p>
+
+					{/if}
+
+					<div class="comments">
+
+						<ul class="{switch="odd|even"}">
+
+							<li>
+
+								<p class="name">{name}</p>
+
+								<p>{comment}</p>
+
+								<p class="date">{coment_date format="%F %d, %Y"}</p>
+
+							</li>
+
+						</ul>
+						
+					</div>
+
+					{/exp:comment:entries}
+
+				</div>
+
+				<div id="comment-form">
+
+					<h6>Comment on this News Article</h6>
+				
+					<fieldset id="comment-form-field">
+
+						<div id="disclaimer">
+
+							<p>We welcome your comments on this news story. Please complete the form to the left to add to the conversation.</p>
+
+							<p><strong>Please Note:</strong> Engine City Times editors reserve the right to edit or remove any comment that is deemed inappropriate, off-topic or otherwise violating the Terms of Service of the Engine City Times website.</p>
+
+							<p>Thank you for participating in the public dialogue!</p>
+
+						</div>
+				
+						{exp:comment:form channel="work"}
+
+						<p><label for="name">Name</label><br />
+
+						<input type="text" name="name" value="{name}" id="name" size="37" /></p>
+
+						<p><label for="email">Email Address</label><br />
+
+						<input type="text" name="email" value="{email}" id="email" size="37" /></p>
+
+						<p><label for="comment">Comment</label><br />
+
+						<textarea name="comment" rows="8" cols="35" id="comment">{comment}</textarea></p>
+
+						<p><input type="submit" name="submit" value="Submit" /></p>
+
+						{/exp:comment:form}
+
+					</fieldset>              
+					
+				</div>
+
+			</div>
+	
+			<div id="secondary">
+	
+				{embed="includes/recent-posts"}
+
+				{embed="includes/archives"}
+
+				{embed="includes/categories"}
+	
+			</div>
+
+		</div>
+
+	</div>
+
+	{embed="includes/footer"}

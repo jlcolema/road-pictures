@@ -1,0 +1,15 @@
+<div class="widget recent-posts">
+
+	<h2>Recent Posts</h2>
+	
+	<ul>
+
+		{exp:channel:entries channel="blog" limit="3" dynamic="no"}
+
+		<li><a href="{title_permalink="blog/article"}">{title}</a></li>
+
+		{/exp:channel:entries}
+
+	</ul>
+
+</div>

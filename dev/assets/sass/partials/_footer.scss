@@ -1,0 +1,14 @@
+
+/*-------------------------------------------
+	Footer
+-------------------------------------------*/
+
+#footer {}
+
+	#copyright {
+		margin: 0;
+		@include font-size(10);
+		line-height: (26/10) + em;
+		text-align: right;
+		color: rgb(120, 120, 120);
+		}

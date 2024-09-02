@@ -1,0 +1,21 @@
+<div id="video">
+
+	<div class="video">
+
+		{exp:channel:entries channel="work" limit="1"}
+
+		{if work-video}
+
+			{work-video width="761" height="430"}
+
+		{if:else}
+
+			<img src="/a/img/video.jpg" alt="A video for {title} is coming soon." />
+
+		{/if}
+
+		{/exp:channel:entries}
+
+	</div>
+
+</div>

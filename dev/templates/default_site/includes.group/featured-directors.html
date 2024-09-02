@@ -1,0 +1,33 @@
+<div id="featured-directors">
+
+	<h3>Featured Directors</h3>
+
+	<ul>
+
+		{exp:channel:entries channel="directors" limit="3" orderby="random"}
+
+		<li>
+
+			<a href="#">
+
+				{if director-photo}
+
+				<img src="{director-photo}" alt="{title}" />
+
+				{if:else}
+				
+				<img src="/a/img/director-thumbnail.jpg" alt="Photo for {title} coming soon." />
+				
+				{/if}
+
+				<h4 class="name">{title}</h4>
+			
+			</a>
+
+		</li>
+
+		{/exp:channel:entries}
+
+	</ul>
+
+</div>

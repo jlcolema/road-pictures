@@ -1,0 +1,204 @@
+
+/*-------------------------------------------
+	Thumbnails
+-------------------------------------------*/
+
+#scenes,
+#videos {
+	padding: 10px 0;
+	border-bottom: 1px solid rgb(90, 90, 90);
+ 	}
+
+	.category {
+
+		@include group;
+		margin-bottom: 2px;
+
+		&:last-of-type { margin: 0; }
+
+		&.recent-work {}
+
+	}
+
+		.category-title {
+
+			float: left;
+			width: 225px;
+			height: 87px;
+			margin-right: 2px;
+			padding: 33px 0 0 45px;
+			@include font-size(14);
+			line-height: (20/14) + em;
+			text-transform: uppercase;
+			@include proxima-nova-bold;
+			color: $white;
+			background: rgb(78, 15, 15);
+
+			.behind-the-scenes & {}
+
+			.off-road-work &,
+			.recent-work & {}
+
+			.lifestyle & { background: rgb(59, 11, 11); }
+
+			.healthcare & { background: rgb(45, 8, 8); }
+
+			.humor & { background: rgb(33, 6, 6); }
+
+			.long-form & { background: rgb(19, 4, 4); }
+
+		}
+
+		.thumbnails {
+
+			position: relative;
+			float: left;
+			width: 763px;
+			height: 87px;
+			margin: 0;
+			padding: 0;
+
+
+			.slides {
+			
+				margin: 0;
+				@include group;
+
+				&:after {
+					content: ".";
+					display: block;
+					clear: both;
+					visibility: hidden;
+					line-height: 0;
+					height: 0;
+					}
+
+				html[xmlns] & { display: block; }
+
+				* html & { height: 1%; }
+
+				li {
+
+					float: left;
+					width: 151px !important;
+					margin-right: 2px;
+					text-align: center;
+					@include font-size(10);
+					line-height: (12/10) + em;
+					-webkit-backface-visibility: hidden;
+
+					#videos & { display: none;  }
+
+					&:nth-child(5n) { margin-right: 0 !important; }
+
+					&:last-of-type { margin: 0; }
+
+				}
+
+					a {
+
+						position: relative;
+						display: block;
+						color: $white;
+
+						&.current,
+						&:hover {
+							
+							.overlay { opacity: 1; }
+
+								img {
+
+									#videos & {
+
+										// Convert image back to color.
+	
+										-webkit-filter: none;
+										-moz-filter: none;
+										-ms-filter: none;
+										-o-filter: none;
+			
+										filter: none;
+
+										}
+
+								}
+
+						}
+						
+					}
+
+						img {
+
+							display: block;
+							width: 100%;
+
+							#videos & {
+
+								// Convert image to grayscale.
+	
+								-webkit-filter: grayscale(100%);
+								-moz-filter: grayscale(100%);
+								-ms-filter: grayscale(100%);
+								-o-filter: grayscale(100%);
+	
+								filter: grayscale(100%);
+								filter: url(grayscale.svg); /* Firefox 4+ */
+								filter: gray; /* IE 6-9 */
+
+								}
+
+  						}
+						
+						.overlay {
+							position: absolute;
+							top: 0;
+							left: 0;
+							width: 100%;
+							padding: 5px 10px;
+							background: rgba(0, 0, 0, .65);
+							opacity: 0;
+							@include transition(opacity 0.25s);
+							z-index: 5;
+							}
+						
+							.client {}
+							
+							.title {}
+
+			}
+
+			.flex-direction-nav {
+
+				margin: 0;
+
+				li { @include hide-text; }
+
+					a {
+	
+						position: absolute;
+						top: 0;
+						width: 14px;
+						height: 100%;
+						display: block;
+						background: rgba(255, 255, 255, .45) url(/a/img/carousel-nav.png) no-repeat;
+						z-index: 10;
+	
+						&.flex-prev {
+							left: 0;
+							background-position: left center;
+							}
+						
+						&.flex-next {
+							right: 0;
+							background-position: right center;
+							}
+
+						&.flex-disabled { display: none; }
+	
+						&:hover { background-color: rgba(255, 255, 255,  .75); }
+	
+					}
+				
+			}
+
+		}

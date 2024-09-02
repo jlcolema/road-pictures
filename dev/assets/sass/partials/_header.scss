@@ -1,0 +1,81 @@
+
+/*-------------------------------------------
+	Header
+-------------------------------------------*/
+
+#header {
+	
+	height: 59px;
+
+}
+
+	#logo {
+
+		float: left;
+		border-right: 2px solid rgb(90, 90, 90);
+		@include hide-text;
+
+		a {
+
+			display: block;
+			width: 223px;
+			height: 59px;
+			background: url(/a/img/logo.png) -4px -2px;
+
+			&:hover {}
+			
+		}
+
+	}
+	
+	nav {
+
+		float: left;
+
+		ol {
+			margin: 0;
+			@include group;
+			}
+
+			li {
+
+				float: left;
+				@include font-size(14);
+				line-height: (20/14) + em;
+				text-transform: uppercase;
+
+				// We just need to show the shadow from the right side, so let's mask it elsewhere.
+
+				overflow: hidden;
+
+				// Active page
+
+				&.active {
+				
+					a {
+						color: $black;
+						background: rgb(97, 97, 97);
+						@include box-shadow(4px 0 4px rgba(0, 0, 0, .75));
+					}
+					
+				}
+				
+			}
+
+				a {
+
+					display: block;
+					height: 59px;
+					margin-right: 8px;
+					padding: 20px 17px 0 17px;
+					color: rgb(155, 155, 155);
+
+					&:hover {
+						color: $black;
+						background: rgb(97, 97, 97);
+						@include box-shadow(4px 0 4px rgba(0, 0, 0, .75));
+					}
+					
+				}
+	
+	}
